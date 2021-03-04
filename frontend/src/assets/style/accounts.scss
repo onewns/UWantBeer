@@ -1,0 +1,104 @@
+@import './base';
+
+#auth-wrap {
+  @include fixed-background;
+}
+
+.form-wrap {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px $font-main;
+  background-color: white;
+  // background-image: url('../../assets/img/login-background.jpg');
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.form-box {
+  position: relative;
+  padding: 30px;
+  width: 300px;
+  background-color: white !important;
+}
+
+.account-input {
+    height: 40px;
+    width: 300px;
+    margin: 8px auto;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid grey;
+    text-indent: 30px;
+    transition: 300ms;
+
+    &:focus {
+      outline: none;
+      border-color: $highlight-color;
+    }
+
+    &::placeholder {
+      text-indent: 30px;
+    }
+
+    &-err {
+      color: salmon;
+      font-size: 0.7rem;
+    }
+}
+
+.checkbox-box {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 5px auto;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    width: 300px;
+    margin: 15px auto;
+    border-radius: 2px;
+    border: 1px solid grey;
+    background-color: desaturate($highlight-color, 70%);
+    color: white;
+    transition: 300ms;
+
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+.signup-btn {
+  @extend .submit-btn;
+  background-color: white;
+  color: black;
+  
+  &:hover {
+    background-color: $highlight-color;
+    color: white;
+  }
+}
+
+.signup-msg {
+  font-size: 12px;
+}
+
+.active-btn {
+  background-color: $highlight-color !important;
+  color: white !important;
+  border: none;
+
+  animation-duration: 250ms;
+  animation-name: active-btn;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+@keyframes active-btn {
+  from {}
+  to {transform: scale(1.05);}
+}
